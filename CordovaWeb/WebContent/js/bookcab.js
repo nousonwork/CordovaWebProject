@@ -1,9 +1,10 @@
 $(document).ready(function(){
+	$(document).writeln("<script type='text/javascript' src='./js/jstorage.js'></script>");
 $("#booktaxi").click(function(){
-	  $.ajax({url:"http://10.60.127.2:8443/cabserver/customers/bookings", crossDomain:true,
+	  $.ajax({url:"http://localhost:8443/cabserver/customers/bookings", crossDomain:true,
 		  type:"POST",
-		  data:"{ \"phone\": \""+$("#phone").val() +"\","		
-		  		+"\"name\": \""+$("#name").val() +"\", " 
+		  data:"{ \"phone\": \""+$.jStorage.get("phone") +"\","		
+		  		+"\"name\": \""+$.jStorage.get("name") +"\", " 
 		  		+"\"from\": \""+$("[name=from]").val() +"\","
 		  		+"\"to\": \""+$("[name=to]").val() +"\","
 		  		+"\"noOfPassengers\": \""+$("#noOfPassengers").val() +"\","
@@ -20,7 +21,8 @@ $("#booktaxi").click(function(){
 			  document.writeln("<script type='text/javascript' src='./js/jstorage.js'></script>");
 			  var userId = $.jStorage.get("userId");
 			  var phone = $.jStorage.get("phone");
-			  alert(userId + ", "+ phone);
+			  var name = $.jStorage.get("name");
+			 // alert(userId + ", "+ phone + ", "+name );
 			  
 			/*  $.getScript( "/js/jstorage.js", function() {
 				  var userId = $.jStorage.get("userId");

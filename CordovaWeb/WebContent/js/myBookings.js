@@ -1,8 +1,8 @@
 $(window).load(function(){
-	  $.ajax({url:"http://10.60.127.2:8443/cabserver/customers/bookings/list", crossDomain:true,
+	  $.ajax({url:"http://localhost:8443/cabserver/customers/bookings/list", crossDomain:true,
 		  type:"POST",
-		  data:"{\"phone\":\"1234567891\","		
-		  		+"\"userId\":\"167\""
+		  data:"{\"phone\":\""+$.jStorage.get("phone")+"\","		
+		  		+"\"userId\":\""+$.jStorage.get("userId")+"\""
 		  		+"}",
 		  success:function(result){
 	     // alert(result);

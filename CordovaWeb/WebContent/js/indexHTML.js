@@ -1,10 +1,11 @@
 $(document).ready(function(){
 $("#login").click(function(){
-	  $.ajax({url:"http://10.60.127.2:8443/cabserver/customers/login", crossDomain:true,
+	  $.ajax({url:"http://localhost:8443/cabserver/customers/login", 
+		  crossDomain:true,
 		  type:"POST",
 		  data:"{ \"phone\": \""+$("#username").val() +"\", \"password\": \""+$("#inputPassword").val() +"\" }",
 		  success:function(result){
-	     alert(result);
+	     //alert(result);
 			  var obj = jQuery.parseJSON(result);			  
 			  if(obj.code == "200"){
 				
@@ -12,7 +13,8 @@ $("#login").click(function(){
 				  document.writeln("<script type='text/javascript' src='./js/jstorage.js'></script>");
 				  
 				  $.jStorage.set("userId", obj.userId, {TTL: 600000});
-				  $.jStorage.set("phone", $("#username").val(),  {TTL: 600000});
+				  $.jStorage.set("phone", obj.phone,  {TTL: 600000});
+				  $.jStorage.set("name", obj.name,  {TTL: 600000});
 				  
 				 /* $.getScript( "/js/jstorage.js", function() {
 					  alert("hi");
@@ -33,7 +35,7 @@ $("#login").click(function(){
 
 $(document).ready(function(){
 	$("#signup").click(function(){
-		  $.ajax({url:"http://10.60.127.2:8443/cabserver/customers/signup", crossDomain:true,
+		  $.ajax({url:"http://localhost:8443/cabserver/customers/signup", crossDomain:true,
 			  type:"POST",
 			  data:"{ \"phone\": \""+$("#phone").val() +"\", " 
 			  +"\"mobileOperator\": \""+$("#mobileOperator").val() +"\", "
@@ -59,10 +61,10 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	$("#update").click(function(){
-		  $.ajax({url:"http://10.60.127.2:8443/cabserver/admin/customers/update-customer-data", crossDomain:true,
+		  $.ajax({url:"http://localhost:8443/cabserver/admin/customers/update-customer-data", crossDomain:true,
 			  type:"POST",
-			  data:"{ \"phone\": \"1234567891\", "
-			  +"\"userId\": \"172\", "
+			  data:"{ \"phone\": \""+$.jStorage.get("phone")+"\", "
+			  +"\"userId\": \""+$.jStorage.get("userId")+"\", "
 			  +"\"mobileOperator\": \""+$("#mobileOperator").val() +"\", "
 			  +"\"firstName\": \""+$("#inputFirst").val() + "\", "
 			  +"\"lastName\": \""+ $("#inputLast").val() + "\", "
