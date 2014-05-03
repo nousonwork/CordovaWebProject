@@ -22,6 +22,8 @@ $("#login").click(function(){
 					  $.jStorage.set("phone", $("#username").val(),  {TTL: 600000});
 					});*/
 				  
+				//  alert($.jStorage.get("name"));
+				  
 				  window.location='bookCab.html'; 
 			  }else{
 				  alert("Invalid Credentials.");

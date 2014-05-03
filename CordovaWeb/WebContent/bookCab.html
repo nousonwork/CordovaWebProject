@@ -295,13 +295,25 @@ body {
 
 <script type="text/javascript" src="./js/bookcab.js"></script>
 
-<script type="text/javascript" src="./js/jstorage.js"></script>
+
+
+<script>
+			function get_value(){
+				//var value = $.jStorage.get(document.getElementById("key2").value);
+				alert($.jStorage.get("name"));
+				document.getElementById("name").value = $.jStorage.get("name","Empty");
+				document.getElementById("phone").value = $.jStorage.get("phone","Empty");
+			}
+			
+			
+</script>
+		
 
 </head>
 
 
 
-<body>
+<body onload="get_value()">
 
 
 
@@ -429,11 +441,17 @@ body {
 							<input class="form-control" size="4" placeholder="Name" id="name"
 								name="customername" type="text" value="">
 						</div>
+						
+		
 
 						<div class="form-group">
 							<input class="form-control" size="4" placeholder="Mobile Number"
 								id="phone" name="phone" type="number" value="">
 						</div>
+						
+	
+						
+						
 						<div class="form-group">
 							<select id="mobileOperator" name="mobileOperator"
 								class="input-medium">
