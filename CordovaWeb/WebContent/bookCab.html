@@ -290,17 +290,18 @@ body {
 	media="screen">
 
 
-<script type="text/javascript" src="./js/jquery.js"></script>
 
 
+<script type="text/javascript" src="./js/jstorage.js"></script>
 <script type="text/javascript" src="./js/bookcab.js"></script>
-
-
+<script type="text/javascript" src="./js/jquery.js"></script>
 
 <script>
 			function get_value(){
 				//var value = $.jStorage.get(document.getElementById("key2").value);
-				alert($.jStorage.get("name"));
+				var value = $.jStorage.get("name");
+				alert(value);
+				
 				document.getElementById("name").value = $.jStorage.get("name","Empty");
 				document.getElementById("phone").value = $.jStorage.get("phone","Empty");
 			}

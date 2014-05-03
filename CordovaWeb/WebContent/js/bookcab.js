@@ -1,8 +1,7 @@
-document.writeln("<script type='text/javascript' src='./js/jstorage.js'></script>");
 $(document).ready(function(){
 	
-//$("#booktaxi").click(function(){
-	 /* $.ajax({url:"http://localhost:8443/cabserver/customers/bookings", crossDomain:true,
+$("#booktaxi").click(function(){
+	 $.ajax({url:"http://localhost:8443/cabserver/customers/bookings", crossDomain:true,
 		  type:"POST",
 		  data:"{ \"phone\": \""+$.jStorage.get("phone") +"\","		
 		  		+"\"name\": \""+$.jStorage.get("name") +"\", " 
@@ -23,30 +22,18 @@ $(document).ready(function(){
 			  var phone = $.jStorage.get("phone");
 			  var name = $.jStorage.get("name");
 			 alert(userId + ", "+ phone + ", "+name );
-			  
-			/*  $.getScript( "/js/jstorage.js", function() {
-				  var userId = $.jStorage.get("userId");
-				  var phone = $.jStorage.get("phone");
-				  alert(userId + ", "+ phone);
-				});*/
-			  
-			  
 	      	    
-			 /* var obj = jQuery.parseJSON(result);			  
+			  var obj = jQuery.parseJSON(result);			  
 			  if(obj.code == "200"){
 				  alert("Booking Successful.");
 				  window.location='bookCab.html';
 				  
 			  }else{
 				  alert("Booking Failed. Try Again.");
-			  }
+			  }		  
 			  
-			  
-	  }});*/
-	//document.writeln("<script type='text/javascript' src='./js/jstorage.js'></script>");
-	//document..writeln("<h1>Better</h1>");
-	//alert($.jStorage.get("name"));
-
-	//});
+	  }});	
+	
+	});
 
 });
