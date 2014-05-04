@@ -10,7 +10,9 @@ $("#login").click(function(){
 			  if(obj.code == "200"){
 				
 				  
-				  document.writeln("<script type='text/javascript' src='./js/jstorage.js'></script>");
+				  document.writeln("<script type='text/javascript' src='http://www.jstorage.info/static/jstorage.js'></script>");
+				  document.writeln("<script type='text/javascript' src='http://www.jstorage.info/static/jquery-json.js'></script>");
+				
 				  
 				  $.jStorage.set("userId", obj.userId, {TTL: 600000});
 				  $.jStorage.set("phone", obj.phone,  {TTL: 600000});
@@ -22,7 +24,7 @@ $("#login").click(function(){
 					  $.jStorage.set("phone", $("#username").val(),  {TTL: 600000});
 					});*/
 				  
-				//  alert($.jStorage.get("name"));
+				// alert($.jStorage.get("phone"));
 				  
 				  window.location='bookCab.html'; 
 			  }else{

@@ -18,10 +18,10 @@ $("#booktaxi").click(function(){
 	      //alert(result);
 			  
 					 
-			  var userId = $.jStorage.get("userId");
-			  var phone = $.jStorage.get("phone");
-			  var name = $.jStorage.get("name");
-			 alert(userId + ", "+ phone + ", "+name );
+			  //var userId = $.jStorage.get("userId");
+			  //var phone = $.jStorage.get("phone");
+			  //var name = $.jStorage.get("name");
+			  //alert(userId + ", "+ phone + ", "+name );
 	      	    
 			  var obj = jQuery.parseJSON(result);			  
 			  if(obj.code == "200"){

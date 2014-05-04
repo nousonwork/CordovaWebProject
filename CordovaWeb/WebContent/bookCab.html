@@ -289,23 +289,21 @@ body {
 <link href="./css/bootstrap-datetimepicker.min.css" rel="stylesheet"
 	media="screen">
 
-
-
-
-<script type="text/javascript" src="./js/jstorage.js"></script>
-<script type="text/javascript" src="./js/bookcab.js"></script>
+<!-- <script type="text/javascript" src="http://www.jstorage.info/static/jquery.js"></script> -->
 <script type="text/javascript" src="./js/jquery.js"></script>
+<script type="text/javascript" src="http://www.jstorage.info/static/jquery-json.js"></script>
+<script type="text/javascript" src="http://www.jstorage.info/static/jstorage.js"></script>
+<script type="text/javascript" src="./js/bookcab.js"></script>
+
 
 <script>
-			function get_value(){
-				//var value = $.jStorage.get(document.getElementById("key2").value);
-				var value = $.jStorage.get("name");
-				alert(value);
-				
-				document.getElementById("name").value = $.jStorage.get("name","Empty");
-				document.getElementById("phone").value = $.jStorage.get("phone","Empty");
-			}
-			
+$(document).ready(function(){
+	//alert($.jStorage.get("name"));
+	document.getElementById("name").value = $.jStorage.get("name");
+	document.getElementById("phone").value = $.jStorage.get("phone");
+	
+});
+					
 			
 </script>
 		
@@ -314,7 +312,7 @@ body {
 
 
 
-<body onload="get_value()">
+<body >
 
 
 
@@ -517,7 +515,7 @@ body {
 	<!-- Le javascript
     ================================================== -->
 	<!-- Placed at the end of the document so the pages load faster -->
-	<script src="./js/jquery.js"></script>
+	
 	<script src="./js/bootstrap-transition.js"></script>
 	<script src="./js/bootstrap-alert.js"></script>
 	<script src="./js/bootstrap-modal.js"></script>
@@ -576,7 +574,7 @@ body {
 		$(document).ready(function() {
 			initFunction();
 		});
-	</script>
+	</script> 
 
 </body>
 </html>
